@@ -1,0 +1,26 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: demo
+    # ---- H2 in-memory database ----
+    datasource:
+      url: jdbc:h2:mem:bookstoredb
+    driver-class-name: rg.h2.Driver
+    username: sa
+    password:
+
+    # ---- JPA / Hibernate ----
+    jpa:
+      hibernate:
+        ddl-auto: update
+      show-sql: true
+      properties:
+        hibernate:
+          format_sql: true
+    # ---- H2 web console at http://localhost:8080/h2-console ----
+    # (JDBC URL to use in the console login: jdbc:h2:mem:bookstoredb)
+    h2:
+     console:
+      enabled: true
+      path: /h2-console
